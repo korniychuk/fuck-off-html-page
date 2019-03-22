@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+  >
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Korniychuk's VPN</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      height: 100%;
+    }
+    .grid2x2 {
+      min-height: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+    .grid2x2 > div {
+      display: flex;
+      flex-basis: calc(50%);
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .box-gif .box1 { background-image: url('/media/1.gif'); }
+    .box-gif .box2 { background-image: url('/media/2.gif'); }
+    .box-gif .box3 { background-image: url('/media/3.gif'); }
+    .box-gif .box4 { background-image: url('/media/4.gif'); }
+
+    .box {
+      overflow: hidden;
+      background-size: cover;
+      background-position: center center;
+    }
+
+    .box1 { background-image: url('/media/1.webp'); background-position: center center; }
+    .box2 { background-image: url('/media/2.webp'); background-position: center 37%; }
+    .box3 { background-image: url('/media/3.webp'); background-position: center 20%; }
+    .box4 { background-image: url('/media/4.webp'); background-position: center 60%; }
+
+    img {
+      visibility: hidden;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid2x2">
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <div class="box box3"></div>
+    <div class="box box4"></div>
+  </div>
+
+  <img src="/media/1.webp" onerror="this.onerror=null; document.querySelector('.grid2x2').classList.add('box-gif')">
+</body>
+</html>
