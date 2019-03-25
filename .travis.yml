@@ -1,4 +1,4 @@
-language: generic
+language: ruby
 
 git:
   depth: 1
