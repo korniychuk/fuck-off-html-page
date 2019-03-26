@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 
-set -euxo pipefail
+set -euo pipefail
+
 declare -r CONTROL_PHRASE='Deploy:OK'
+
+echo -e '\n----- BEGIN Triggering docker pull -----\n'
 
 declare RES=$( \
     curl \
@@ -11,7 +14,9 @@ declare RES=$( \
         -i
 )
 
-echo "${RES}"
+echo "n${RES}n"
+
+echo -e '\n----- END Triggering docker pull -----\n'
 
 if [[ ! -z $(echo "${RES}" | grep "${CONTROL_PHRASE}") ]]; then
     echo 'Pulling completed successful'
