@@ -14,3 +14,6 @@ deploy:
   script: bash docker-push.sh
   on:
     branch: master
+
+after_deploy:
+  - 'curl -u "${DEPLOY_BASEAUTH_USER}:${DEPLOY_BASEAUTH_PASSWORD}" -X POST "http://${DEPLOY_TRIGGER_URL}"'
