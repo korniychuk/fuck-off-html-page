@@ -16,4 +16,4 @@ deploy:
     branch: master
 
 after_deploy:
-  - bash trigger-pull.sh
+  - ./trigger-pull.sh || travis_terminate 1;
