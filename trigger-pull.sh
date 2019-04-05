@@ -14,7 +14,7 @@ declare RES=$( \
         -i
 )
 
-echo "n${RES}n"
+echo "${RES}"
 
 echo -e '\n----- END Triggering docker pull -----\n'
 
