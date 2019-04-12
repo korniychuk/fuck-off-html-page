@@ -8,7 +8,7 @@ echo -e '\n----- BEGIN Triggering docker pull -----\n'
 
 declare RES=$( \
     curl \
-        -X POST "http://${DEPLOY_TRIGGER_URL}" \
+        -X POST "${DEPLOY_TRIGGER_URL}" \
         -u "${DEPLOY_BASEAUTH_USER}:${DEPLOY_BASEAUTH_PASSWORD}" \
         --silent \
         -i
